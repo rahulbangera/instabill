@@ -4,6 +4,7 @@ import { Button } from "~/app/components/ui/button";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 const signin = () => {
   const [email, setEmail] = useState<string>("");
@@ -14,7 +15,7 @@ const signin = () => {
 
   useEffect(() => {
     if (session) {
-      router.back();
+      router.push("/");
     }
   }, [session]);
 
@@ -78,6 +79,12 @@ const signin = () => {
           >
             Sign In
           </Button>
+          <h2>
+            Don't have an account?{" "}
+            <Link href={"/auth/signup"} className="font-bold">
+              Create Now
+            </Link>
+          </h2>
         </form>
       </div>
     </div>

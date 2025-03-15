@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "~/app/components/ui/button";
 import { useRouter } from "next/navigation";
 import { api } from "~/trpc/react";
+import Link from "next/link";
 
 const signin = () => {
   const router = useRouter();
@@ -35,9 +36,9 @@ const signin = () => {
 
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <div className="w-full max-w-md space-y-6 rounded-xl border-[1px] border-black bg-white p-8 shadow-md">
+      <div className="w-full max-w-md space-y-6 rounded-xl border-[1px] border-black bg-gray-500 p-8 shadow-md">
         <h2 className="text-center text-2xl font-bold text-gray-900">
-          Sign In
+          Sign Up
         </h2>
         <form className="space-y-6">
           <div>
@@ -96,6 +97,12 @@ const signin = () => {
           >
             Sign Up
           </Button>
+          <h2>
+           Already have an account?{" "}
+            <Link href={"/auth/signin"} className="font-bold">
+              Log In
+            </Link>
+          </h2>
         </form>
       </div>
     </div>
