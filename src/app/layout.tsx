@@ -8,7 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { SessionProvider } from "next-auth/react";
+import { SessionProvider } from "next-auth/react"; 
 
 export default function RootLayout({
   children,
@@ -19,7 +19,7 @@ export default function RootLayout({
   const [dark, setDark] = React.useState<boolean>(true);
   const [progress, setProgress] = React.useState<number>(0);
   useEffect(() => {
-    console.log("RootLayout Re-rendered | dark:", dark);
+    console.log("RootLayoutuyjuyyu Re-rendered | dark:", dark);
   }, [dark]);
 
   useEffect(() => {
